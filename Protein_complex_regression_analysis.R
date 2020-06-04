@@ -1,10 +1,10 @@
-######################## Protein complexes analysis ############################
+######################## Protein complexes regression analysis ############################
 
 # This script uses the information on table 
 # to gather the genes and proteins of each complex
-# and check how their correlation is affected by age.
+# and check how their correlation change by regression analysis. 
 
-# Testing the regression analysis and permutation.
+# Applying permutations to test for significance.
 
 ################################################################################
 ############ clear workspace
