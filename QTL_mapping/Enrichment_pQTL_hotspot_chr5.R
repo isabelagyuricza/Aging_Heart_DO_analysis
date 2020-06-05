@@ -24,12 +24,6 @@ library(broom)
 # load QTLViewer version of data
 load("GBRS/QTL_viewer/heart_newversion/QTLs_data_newversion_corrected.RData")
 
-
-# useful for plotting
-data(CCcolors)
-names(CCcolors) <- c("A","B","C","D","E","F","G","H")
-
-
 ################################################################################
 
 ### for transbands of protein interactive scan for age
