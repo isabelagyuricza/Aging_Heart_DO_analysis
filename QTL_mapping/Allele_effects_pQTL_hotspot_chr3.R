@@ -69,10 +69,10 @@ expr.data <- apply(expr.data,2,myresids,dataset.DOheart.protein.debatch.nopoly$a
 
 # Apply a normal scores transform to the data.
 rankZ <- function(x) {
-  x <- rank(x, na.last = "keep") / (length(x) + 1)
+  x <- rank(x, na.last = "keep") / (length(x) - sum(is.na(x)) + 1)
   return(qnorm(x))
-} # rankZ()
-#
+}
+
 expr.data <- apply(expr.data,2,rankZ) #Across mice
 
 rm(myresids, rankZ)
