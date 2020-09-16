@@ -111,7 +111,7 @@ go_enrich_output <- enrichGO(gene = names(gene_entrez_input),
                              pAdjustMethod = "BH",
                              readable = TRUE)
 
-go_enrich_output_resul <- go_enrich_output@result[go_enrich_output@result$qvalue < 0.1,] #Taking only the significant pathways
+go_enrich_output_resul <- go_enrich_output@result[go_enrich_output@result$qvalue < 0.05,] #Taking only the significant pathways
 
 
 write.csv(go_enrich_output_resul,"GBRS/gene_enrichment/Results/GO_enrich_clusterProfile.csv")
