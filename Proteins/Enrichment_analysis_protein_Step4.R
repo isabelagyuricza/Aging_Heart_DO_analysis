@@ -43,7 +43,7 @@ enrichments_age <- list(
     unique(filter(df_final_wth, padj.Age<0.05)$Gene_ID),
     unique(df_final_wth$Gene_ID), ont="MF"))
 
-enrichments_age_filtered <- lapply(enrichments_age, enrich.filter,0.1) 
+enrichments_age_filtered <- lapply(enrichments_age, enrich.filter,0.05) 
 
 dim(enrichments_age_filtered$protein.age.BP)
 # [1] 2 9
@@ -94,9 +94,9 @@ attach(enrichments_age_filtered)
 
 pdf("Protein_enrich_analysis/Protein_GK/Results/emapplot_age_1.pdf",width = 8,height = 8)
 #quartz()
-emapplot(protein.age.BP) + ggtitle("Age BP, q < 0.1")
-emapplot(protein.age.CC) + ggtitle("Age CC, q < 0.1")
-emapplot(protein.age.MF) + ggtitle("Age MF, q < 0.1")
+emapplot(protein.age.BP) + ggtitle("Age BP, q < 0.05")
+emapplot(protein.age.CC) + ggtitle("Age CC, q < 0.05")
+emapplot(protein.age.MF) + ggtitle("Age MF, q < 0.05")
 
 dev.off()
 
@@ -153,7 +153,7 @@ cnetplot(protein.age.BP, foldChange = input, colorEdge=F) +
   scale_colour_gradientn(colours = colpal, name = "Slope", 
                          breaks = c(0.5,0,-0.5),labels = c("slope > 0.5","0.5 < slope < 0","slope < 0")) +
   guides(size = F)+
-  ggtitle("Protein Age BP, q < 0.1")
+  ggtitle("Protein Age BP, q < 0.05")
 
 dev.off()
 
@@ -210,7 +210,7 @@ cnetplot(tmp, foldChange = input, colorEdge=F) +
   scale_colour_gradientn(colours = colpal, name = "Slope", 
                          breaks = c(0.5,0,-0.5),labels = c("slope > 0.5","0.5 < slope < 0","slope < 0")) +
   guides(size = F)+
-  ggtitle("Protein Age CC, q < 0.1")
+  ggtitle("Protein Age CC, q < 0.05")
 
 dev.off()
 
@@ -277,7 +277,7 @@ cnetplot(tmp, foldChange = input, colorEdge=F) +
   scale_colour_gradientn(colours = colpal, name = "Slope", 
                          breaks = c(0.5,0,-0.5),labels = c("slope > 0.5","0.5 < slope < 0","slope < 0")) +
   guides(size = F)+
-  ggtitle("Protein Age BP and CC, q < 0.1")
+  ggtitle("Protein Age BP and CC, q < 0.05")
 
 dev.off()
 
