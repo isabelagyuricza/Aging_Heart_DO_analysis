@@ -26,7 +26,7 @@ library(tidyverse)
 
 ######################################################## 1) Setting up the data
 
-result_signif <- read.csv("GBRS/DE_analysis_heart//Results/results_signif_DE.csv",header = TRUE, row.names = 1) #Significant genes from DE analysis
+result_signif <- read.csv("GBRS/DE_analysis_heart/Results/results_signif_DE.csv",header = TRUE, row.names = 1) #Significant genes from DE analysis
 
 result <- read.csv("GBRS/DE_analysis_heart/Results/results_DE.csv",header = TRUE, row.names = 1) #Whole genes from DE analysis - Going to use as background
 
